@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FireauthService } from './../shared/fireauth.service';
+import { FireauthService } from './../../shared/fireauth.service';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 
 @Component({
   selector: 'app-my-location',
-  templateUrl: './my-location.page.html',
-  styleUrls: ['./my-location.page.scss'],
+  templateUrl: './my-location.component.html',
+  styleUrls: ['./my-location.component.scss'],
 })
-export class MyLocationPage implements OnInit {
+export class MyLocationComponent implements OnInit {
 
-	myLocation = [];
+  myLocation = [];
   current_location = {
     latitude: 0,
     longitude: 0

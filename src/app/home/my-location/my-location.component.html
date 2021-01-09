@@ -8,7 +8,7 @@
 	<ion-item>
 		<ion-button color="primary" (click)="saveLocations()">Track Location</ion-button>
 	</ion-item>	
-	<ion-item *ngFor="let booking of myLocation" class="user-list">
+	<ion-item *ngFor="let booking of myLocation;let i = index;" class="user-list">
       <ion-label>
         <p>
           Latitude: {{booking.current_location.latitude}}

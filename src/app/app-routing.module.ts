@@ -8,13 +8,9 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'my-location',
+    redirectTo: 'home',
     pathMatch: 'full'
-  },
-  {
-    path: 'my-location',
-    loadChildren: () => import('./my-location/my-location.module').then( m => m.MyLocationPageModule)
-  },
+  }
 ];
 
 @NgModule({
