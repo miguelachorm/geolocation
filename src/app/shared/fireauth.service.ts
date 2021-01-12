@@ -11,7 +11,7 @@ export class FireauthService {
   constructor(private db: AngularFireDatabase) { }
 
   // Create
-  createBooking(apt) {
+  saveLocation(apt) {
   	console.log(apt)
   	this.locationListRef = this.db.list('/lists');
     return this.locationListRef.push({
@@ -20,7 +20,7 @@ export class FireauthService {
     })
   }
 
-  getBookingList() {
+  getLocations() {
     this.locationListRef = this.db.list('/lists');
     return this.locationListRef;
   }

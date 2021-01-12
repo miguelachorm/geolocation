@@ -23,9 +23,9 @@ export class MyLocationComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  	this.fetchBookings();
-    let bookingRes = this.aptService.getBookingList();
-    bookingRes.snapshotChanges().subscribe(res => {
+  	this.fetchLatLong();
+    let locationResult = this.aptService.getLocations();
+    locationResult.snapshotChanges().subscribe(res => {
       this.myLocation = [];
       res.forEach(item => {
         let a = item.payload.toJSON();
@@ -47,15 +47,15 @@ export class MyLocationComponent implements OnInit {
     });
   }
 
-  fetchBookings() {
-    this.aptService.getBookingList().valueChanges().subscribe(res => {
+  fetchLatLong() {
+    this.aptService.getLocations().valueChanges().subscribe(res => {
       console.log(res)
     })
   }
 
   saveLocations() {
     console.log(this.current_location);
-    this.aptService.createBooking({
+    this.aptService.saveLocation({
       current_location: this.current_location,
       current_time: new Date().getTime()}).then(res => {
     }).catch(error => console.log(error));
